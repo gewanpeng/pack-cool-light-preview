@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>发货看板 · cool-light preview</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+.tabular-nums { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body class="h-screen overflow-hidden">
+<div class="flex h-screen bg-slate-50 text-slate-900">
+  <aside class="w-60 bg-slate-100 text-slate-700 flex flex-col shrink-0 border-r border-slate-200">
+    <div class="h-16 flex items-center gap-3 px-4 border-b border-slate-200">
+      <div class="w-9 h-9 rounded-xl bg-blue-500 flex items-center justify-center shadow-sm shadow-blue-500/25">
+        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-900 text-sm">包装追踪</div>
+        <div class="text-[11px] text-slate-500">Supplier Pack Track</div>
+      </div>
+    </div>
+    <div class="px-3 pt-4 flex-1 overflow-y-auto">
+      <div class="px-2 mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate-500">运营看板</div>
+      <button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-600">今日工作台</button>
+      <button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm bg-blue-50 text-blue-600 font-medium">发货看板</button>
+      <div class="px-2 pt-4 mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate-500">业务操作</div>
+      <button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-600">提货计划</button>
+      <button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-600">预测清单</button>
+    </div>
+    <div class="mx-3 mb-3 px-3 py-2 rounded-xl bg-white border border-slate-200">
+      <div class="text-xs font-medium text-slate-900">admin</div>
+      <div class="text-[10px] text-slate-500">管理员</div>
+    </div>
+  </aside>
+
+  <main class="flex-1 min-h-0 overflow-hidden flex flex-col bg-slate-50">
+    <div class="px-6 pt-6 pb-3 shrink-0 space-y-3">
+      <div class="flex items-end justify-between gap-3">
+        <div>
+          <h1 class="text-xl font-bold text-slate-900 tracking-tight">发货看板</h1>
+          <p class="text-[12px] text-slate-400 mt-0.5">2026年10月 · 共 1248 条</p>
+        </div>
+        <div class="flex gap-2">
+          <button class="px-3 py-2 text-xs rounded-xl border border-slate-200 bg-white text-slate-600">导出</button>
+          <button class="px-3 py-2 text-xs rounded-xl bg-blue-500 text-white font-medium">分析周期</button>
+        </div>
+      </div>
+      <!-- legend above table (cool-light fix) -->
+      <div class="flex flex-wrap gap-3 text-[11px] text-slate-500">
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>平衡</span>
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span>供应商偏多</span>
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-rose-500"></span>中铁偏多</span>
+        <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span>在途未清</span>
+      </div>
+      <div class="flex gap-2">
+        <input class="flex-1 max-w-xs border border-slate-200 rounded-xl px-3 py-2 text-sm bg-white" placeholder="搜索供应商 / 包装编号" />
+        <select class="border border-slate-200 rounded-xl px-3 py-2 text-sm bg-white text-slate-600"><option>全部负责人</option></select>
+        <select class="border border-slate-200 rounded-xl px-3 py-2 text-sm bg-white text-slate-600"><option>2026</option></select>
+        <select class="border border-slate-200 rounded-xl px-3 py-2 text-sm bg-white text-slate-600"><option>10月</option></select>
+      </div>
+      <div class="grid grid-cols-4 gap-3">
+        <div class="rounded-xl border border-slate-200/80 bg-white px-4 py-3"><p class="text-[11px] text-slate-400">在途未清</p><p class="text-xl font-bold text-blue-600 tabular-nums">186</p></div>
+        <div class="rounded-xl border border-slate-200/80 bg-white px-4 py-3"><p class="text-[11px] text-slate-400">供应商偏多</p><p class="text-xl font-bold text-amber-600 tabular-nums">42</p></div>
+        <div class="rounded-xl border border-slate-200/80 bg-white px-4 py-3"><p class="text-[11px] text-slate-400">中铁偏多</p><p class="text-xl font-bold text-rose-600 tabular-nums">27</p></div>
+        <div class="rounded-xl border border-slate-200/80 bg-white px-4 py-3"><p class="text-[11px] text-slate-400">平衡</p><p class="text-xl font-bold text-emerald-600 tabular-nums">993</p></div>
+      </div>
+    </div>
+    <div class="flex-1 min-h-0 overflow-auto px-6 pb-6">
+      <div class="rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50 text-slate-500 text-xs">
+            <tr>
+              <th class="text-left font-medium px-4 py-3">供应商</th>
+              <th class="text-left font-medium px-4 py-3">包装编号</th>
+              <th class="text-right font-medium px-4 py-3">库存</th>
+              <th class="text-right font-medium px-4 py-3">供应商发货</th>
+              <th class="text-right font-medium px-4 py-3">中铁发货</th>
+              <th class="text-right font-medium px-4 py-3">差异%</th>
+              <th class="text-left font-medium px-4 py-3">状态</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="hover:bg-slate-50/80"><td class="px-4 py-3 text-slate-800">苏州某某包装</td><td class="px-4 py-3 text-slate-500 font-mono text-xs">PK-10231</td><td class="px-4 py-3 text-right tabular-nums">1,280</td><td class="px-4 py-3 text-right tabular-nums text-blue-700">420</td><td class="px-4 py-3 text-right tabular-nums">418</td><td class="px-4 py-3 text-right tabular-nums text-emerald-600">+0.5%</td><td class="px-4 py-3"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">平衡</span></td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="px-4 py-3 text-slate-800">常州纸箱厂</td><td class="px-4 py-3 text-slate-500 font-mono text-xs">PK-08812</td><td class="px-4 py-3 text-right tabular-nums">640</td><td class="px-4 py-3 text-right tabular-nums text-blue-700">310</td><td class="px-4 py-3 text-right tabular-nums">285</td><td class="px-4 py-3 text-right tabular-nums text-amber-600">+8.8%</td><td class="px-4 py-3"><span class="inline-flex items-center gap-1 text-xs text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">供应商偏多</span></td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="px-4 py-3 text-slate-800">无锡木箱</td><td class="px-4 py-3 text-slate-500 font-mono text-xs">PK-05501</td><td class="px-4 py-3 text-right tabular-nums">210</td><td class="px-4 py-3 text-right tabular-nums text-blue-700">90</td><td class="px-4 py-3 text-right tabular-nums">112</td><td class="px-4 py-3 text-right tabular-nums text-rose-600">-19.6%</td><td class="px-4 py-3"><span class="inline-flex items-center gap-1 text-xs text-rose-700 bg-rose-50 px-2 py-0.5 rounded-md">中铁偏多</span></td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="px-4 py-3 text-slate-800">南京托盘</td><td class="px-4 py-3 text-slate-500 font-mono text-xs">PK-03344</td><td class="px-4 py-3 text-right tabular-nums">980</td><td class="px-4 py-3 text-right tabular-nums text-blue-700">150</td><td class="px-4 py-3 text-right tabular-nums">150</td><td class="px-4 py-3 text-right tabular-nums text-emerald-600">0.0%</td><td class="px-4 py-3"><span class="inline-flex items-center gap-1 text-xs text-blue-700 bg-blue-50 px-2 py-0.5 rounded-md">在途未清</span></td></tr>
+            <tr class="hover:bg-slate-50/80"><td class="px-4 py-3 text-slate-800">南通泡沫</td><td class="px-4 py-3 text-slate-500 font-mono text-xs">PK-07719</td><td class="px-4 py-3 text-right tabular-nums">1,520</td><td class="px-4 py-3 text-right tabular-nums text-blue-700">520</td><td class="px-4 py-3 text-right tabular-nums">515</td><td class="px-4 py-3 text-right tabular-nums text-emerald-600">+1.0%</td><td class="px-4 py-3"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">平衡</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
